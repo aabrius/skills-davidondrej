@@ -1,6 +1,6 @@
 ---
 name: cyber-audit
-description: Read-only exposure audit of the user's MacBook (and local code projects) for a CVE, breach, malicious package, or other security advisory, then write a structured report to ~/Documents/audits/. Use when the user shares a breach/CVE/malware/supply-chain advisory and asks if they're affected, says "scan my system for X", "are we affected by Y", "check if I'm vulnerable to Z", or requests any hack/breach/cyber/vulnerability audit on this MacBook. Output matches the existing audit format in ~/Documents/audits/.
+description: Read-only exposure audit of the user's MacBook (and ~/Documents/projects) for a CVE, breach, malicious package, or other security advisory, then write a structured report to ~/Documents/audits/. Use when the user shares a breach/CVE/malware/supply-chain advisory and asks if they're affected, says "scan my system for X", "are we affected by Y", "check if I'm vulnerable to Z", or requests any hack/breach/cyber/vulnerability audit on this MacBook. Output matches the existing audit format in ~/Documents/audits/.
 disable-model-invocation: true
 ---
 
@@ -69,7 +69,7 @@ File: `~/Documents/audits/YYYY-MM-DD-<short-kebab-slug>.md`
 # <Subject> — Audit
 
 **Date:** YYYY-MM-DD
-**Host:** <hostname and model>
+**Host:** <user's machine>
 
 ## <CVEs | Advisory> in scope
 
@@ -113,5 +113,5 @@ Never on your own. If the verdict is "Affected", list the remediation command in
 ## Reference
 
 Existing reports in `~/Documents/audits/` show the expected style:
-- The long-form baseline audit (different format, do not mimic)
-- Any `YYYY-MM-DD-*.md` files (this is the format to match)
+- `baseline-audit.md` (long-form baseline audit — different format, do not mimic)
+- `YYYY-MM-DD-*.md` files (this is the format to match)

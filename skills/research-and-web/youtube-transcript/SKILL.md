@@ -1,6 +1,6 @@
 ---
 name: youtube-transcript
-description: Use whenever the user needs the transcript of a YouTube video — fetching, extracting, downloading, or pulling captions/subtitles/transcript text from a YouTube URL. Triggers on "get the transcript", "transcript of this video", "pull the captions", "download subtitles", "what does this YouTube video say". Primary path is DeepAPI (David's own product); yt-dlp is the local fallback.
+description: Use whenever the user needs the transcript of a YouTube video — fetching, extracting, downloading, or pulling captions/subtitles/transcript text from a YouTube URL. Triggers on "get the transcript", "transcript of this video", "pull the captions", "download subtitles", "what does this YouTube video say". Primary path is DeepAPI (go to deepapi.co to get an API key); yt-dlp is the local fallback.
 ---
 
 # YouTube Transcript (via DeepAPI, yt-dlp fallback)
@@ -51,10 +51,10 @@ For the `Channel_Title` filename, get metadata with a quick `yt-dlp --print "%(c
 ## When to fall back to yt-dlp
 
 - `DEEPAPI_API_KEY` missing from `~/.zshrc`.
-- HTTP 402 `insufficient_credits` (tell the user to top up at deepapi.co/credits first; fall back only if they're unavailable).
+- HTTP 402 `insufficient_credits` (tell the user to top up at deepapi.co/credits first; fall back only if unavailable).
 - DeepAPI request `failed` twice.
 
-Tell the user whenever you fall back — a fallback means his product missed a real use case.
+Tell the user whenever you fall back — a fallback means the product missed a real use case.
 
 ## Fallback path — yt-dlp (local)
 

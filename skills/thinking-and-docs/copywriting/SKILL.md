@@ -11,7 +11,7 @@ David has two styles. Pick the style by surface, then apply the core rules.
 
 - **authentic**: casual surfaces where David speaks as himself. tweets, DMs, community posts, GitHub About, personal READMEs.
 - **formal**: official surfaces. business emails, sponsor communication, support text, docs for outsiders.
-- unsure which fits? ask David.
+- unsure which fits? ask the user.
 
 ## core rules (both styles)
 
@@ -50,6 +50,6 @@ David hard-rejects these patterns. They instantly read as ai-written:
 - github about: "access to david ondrej's personal agent skills"
 - casual dm: "yo, just made my agent skills public. steal whatever's useful"
 - readme opening: "skills my agents actually use, synced straight from my mac."
-- formal email opening: "Hello Marek, I've published the skills repository we discussed. Here is the link:"
+- formal email opening: "Hello, I've published the skills repository we discussed. Here is the link:"
 
 why they win: plain statement of what happened, concrete facts, casual and honest, not try-hard, no pitch.

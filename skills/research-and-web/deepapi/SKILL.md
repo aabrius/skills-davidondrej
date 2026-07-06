@@ -88,7 +88,7 @@ Safety:
 - Poll next.path while status is running and report the final debitMicrousd.
 
 Example body:
-```json
+
 {
   "maxCostUsd": "1.00",
   "waitForFinishSecs": 60,
@@ -97,7 +97,7 @@ Example body:
   ],
   "maxPages": 1
 }
-```
+
 
 ### Scrape LinkedIn Profile
 
@@ -114,7 +114,7 @@ Safety:
 - Poll next.path while status is running and report the final debitMicrousd.
 
 Example body:
-```json
+
 {
   "maxCostUsd": "0.05",
   "waitForFinishSecs": 60,
@@ -122,7 +122,7 @@ Example body:
     "williamhgates"
   ]
 }
-```
+
 
 ### Scrape GitHub Profile
 
@@ -139,7 +139,7 @@ Safety:
 - Poll next.path while status is running and report the final debitMicrousd.
 
 Example body:
-```json
+
 {
   "maxCostUsd": "0.03",
   "waitForFinishSecs": 60,
@@ -147,7 +147,7 @@ Example body:
     "octocat"
   ]
 }
-```
+
 
 ### Search X/Twitter
 
@@ -164,7 +164,7 @@ Safety:
 - Poll next.path while status is running and report the final debitMicrousd.
 
 Example body:
-```json
+
 {
   "maxCostUsd": "0.03",
   "waitForFinishSecs": 60,
@@ -174,7 +174,7 @@ Example body:
   "maxItems": 1,
   "sort": "latest"
 }
-```
+
 
 ### Scrape LinkedIn Jobs
 
@@ -191,7 +191,7 @@ Safety:
 - Poll next.path while status is running and report the final debitMicrousd.
 
 Example body:
-```json
+
 {
   "maxCostUsd": "0.05",
   "waitForFinishSecs": 60,
@@ -199,7 +199,7 @@ Example body:
   "location": "United States",
   "maxItems": 5
 }
-```
+
 
 ### Scrape LinkedIn Company
 
@@ -216,7 +216,7 @@ Safety:
 - Poll next.path while status is running and report the final debitMicrousd.
 
 Example body:
-```json
+
 {
   "maxCostUsd": "0.05",
   "waitForFinishSecs": 60,
@@ -224,7 +224,7 @@ Example body:
     "microsoft"
   ]
 }
-```
+
 
 ### Search LinkedIn People
 
@@ -241,7 +241,7 @@ Safety:
 - Poll next.path while status is running and report the final debitMicrousd.
 
 Example body:
-```json
+
 {
   "maxCostUsd": "0.50",
   "waitForFinishSecs": 60,
@@ -253,7 +253,7 @@ Example body:
   ],
   "maxItems": 5
 }
-```
+
 
 ### Scrape LinkedIn Posts
 
@@ -270,7 +270,7 @@ Safety:
 - Poll next.path while status is running and report the final debitMicrousd.
 
 Example body:
-```json
+
 {
   "maxCostUsd": "0.05",
   "waitForFinishSecs": 60,
@@ -279,7 +279,7 @@ Example body:
   ],
   "maxItems": 3
 }
-```
+
 
 ### Scrape X/Twitter User
 
@@ -296,7 +296,7 @@ Safety:
 - Poll next.path while status is running and report the final debitMicrousd.
 
 Example body:
-```json
+
 {
   "maxCostUsd": "0.05",
   "waitForFinishSecs": 60,
@@ -304,7 +304,7 @@ Example body:
     "nasa"
   ]
 }
-```
+
 
 ### Scrape X/Twitter Replies
 
@@ -321,14 +321,14 @@ Safety:
 - Poll next.path while status is running and report the final debitMicrousd.
 
 Example body:
-```json
+
 {
   "maxCostUsd": "0.20",
   "waitForFinishSecs": 60,
   "url": "https://x.com/NASA/status/1234567890123456789",
   "maxItems": 5
 }
-```
+
 
 ### Scrape YouTube Transcript
 
@@ -345,13 +345,13 @@ Safety:
 - Poll next.path while status is running and report the final debitMicrousd.
 
 Example body:
-```json
+
 {
   "maxCostUsd": "0.05",
   "waitForFinishSecs": 60,
   "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 }
-```
+
 
 ### Scrape YouTube Channel
 
@@ -368,7 +368,7 @@ Safety:
 - Poll next.path while status is running and report the final debitMicrousd.
 
 Example body:
-```json
+
 {
   "maxCostUsd": "0.30",
   "waitForFinishSecs": 60,
@@ -377,7 +377,7 @@ Example body:
   ],
   "maxItems": 3
 }
-```
+
 
 ### Search YouTube
 
@@ -394,7 +394,7 @@ Safety:
 - Poll next.path while status is running and report the final debitMicrousd.
 
 Example body:
-```json
+
 {
   "maxCostUsd": "0.10",
   "waitForFinishSecs": 60,
@@ -402,7 +402,7 @@ Example body:
   "sort": "views",
   "maxItems": 3
 }
-```
+
 
 ### Scrape LinkedIn
 
@@ -419,7 +419,7 @@ Safety:
 - Poll next.path while status is running and report the final debitMicrousd.
 
 Example body:
-```json
+
 {
   "maxCostUsd": "0.05",
   "waitForFinishSecs": 60,
@@ -427,7 +427,7 @@ Example body:
     "williamhgates"
   ]
 }
-```
+
 
 ### Scrape GitHub
 
@@ -444,7 +444,7 @@ Safety:
 - Poll next.path while status is running and report the final debitMicrousd.
 
 Example body:
-```json
+
 {
   "maxCostUsd": "0.03",
   "waitForFinishSecs": 60,
@@ -452,7 +452,7 @@ Example body:
     "octocat"
   ]
 }
-```
+
 
 ### Scrape Twitter
 
@@ -469,7 +469,7 @@ Safety:
 - Poll next.path while status is running and report the final debitMicrousd.
 
 Example body:
-```json
+
 {
   "maxCostUsd": "0.03",
   "waitForFinishSecs": 60,
@@ -479,7 +479,7 @@ Example body:
   "maxItems": 1,
   "sort": "latest"
 }
-```
+
 
 ### Send Email
 
@@ -496,14 +496,14 @@ Safety:
 - Attachments, hidden HTML, image HTML, URL shorteners, and high-risk direct sends are blocked by policy.
 
 Example body:
-```json
+
 {
   "to": "<email-address>",
   "subject": "Quick hello",
   "text": "Hi, this is a draft from my agent.",
   "send": false
 }
-```
+
 
 ### Receive Email
 
@@ -542,9 +542,9 @@ Safety:
 - Sending re-checks recipient and content policy against the stored draft; blocked drafts stay drafts.
 
 Example body:
-```json
+
 {}
-```
+
 
 ### Deep Research
 
@@ -561,13 +561,13 @@ Safety:
 - Report debitMicrousd and summarize the returned sources when sources are present.
 
 Example body:
-```json
+
 {
   "query": "What changed in EU AI Act compliance timelines for API startups?",
   "context": "We sell API tooling to EU customers.",
   "maxCostUsd": "0.10"
 }
-```
+
 
 ### Generate Image
 
@@ -584,12 +584,12 @@ Safety:
 - output.images contains base64 data URLs; save them to files instead of printing them.
 
 Example body:
-```json
+
 {
   "prompt": "A minimal flat illustration of a rocket launching from a laptop screen",
   "maxCostUsd": "0.20"
 }
-```
+
 
 ### Web Search
 
@@ -606,13 +606,13 @@ Safety:
 - Treat snippets as page summaries; open a result URL when you need the full content.
 
 Example body:
-```json
+
 {
   "query": "latest stable Node.js LTS version",
   "maxResults": 3,
   "maxCostUsd": "0.05"
 }
-```
+
 
 ### Request Status
 

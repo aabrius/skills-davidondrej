@@ -5,23 +5,23 @@ description: Use when the user wants to manage their VPS servers and the AI agen
 
 # VPS Server Management
 
-Source of truth: `~/Documents/code/workspace/library/infrastructure.md` (read it for the latest — IPs/expirations change).
+Source of truth: `~/library/infrastructure.md` (read it for the latest — IPs/expirations change).
 
 ## Servers (Hostinger VPS) — 3 total
 
 | Hostname | IP | OS | Purpose | Expires |
 |---|---|---|---|---|
-| personal.openclaw | <IP> | Ubuntu 24.04 (Dokploy) | OpenClaw — personal instance | <date> |
-| n8n.automations | <IP> | Ubuntu 24.04 (n8n) | All n8n workflow automations (primary) | <date> |
-| private.hermes | <IP> | Ubuntu 24.04 | Hermes Agent — Discord gateway (Vilnius, LT) | <date> |
+| personal.openclaw | <server-ip> | Ubuntu 24.04 (Dokploy) | OpenClaw — personal instance | <date> |
+| n8n.automations | <server-ip> | Ubuntu 24.04 (n8n) | All n8n workflow automations (primary) | <date> |
+| private.hermes | <server-ip> | Ubuntu 24.04 | Hermes Agent — Discord gateway (Vilnius, LT) | <date> |
 
 SSH as `root@<IP>`.
 
 ## Access levels (never share higher than needed)
 
-1. **App login** — e.g. `n8n.srv729146.hstgr.cloud`. Build/edit workflows, no server access. Safest to share.
+1. **App login** — e.g. `<app-hostname>`. Build/edit workflows, no server access. Safest to share.
 2. **VPS SSH** — `root@<IP>`. Docker, files, system config. Trusted technical people only.
-3. **Hostinger hPanel** — `hpanel.hostinger.com`. Billing, reboot, OS reinstall. Exposes SSH creds + browser terminal, so it grants server access too. User only.
+3. **Hostinger hPanel** — `hpanel.hostinger.com`. Billing, reboot, OS reinstall. Exposes SSH creds + browser terminal, so it grants server access too. David only.
 
 ## Managing a VPS via an agent
 
@@ -39,12 +39,12 @@ Claude Code cmux note: after Claude finishes, it may prefill a predicted next us
 
 ## Hermes ops (on private.hermes)
 
-bash
+```bash
 hermes --version            # shows version + commits behind
 hermes update               # auto-snapshots, updates deps, rebuilds web UI, restarts gateway itself
 hermes gateway status|restart
 journalctl --user -u hermes-gateway --since '5 min ago' --no-pager   # gateway logs (systemd USER service)
-
+```
 
 - **Default model** lives in `~/.hermes/config.yaml` under `model.provider` + `model.default` — NOT in `.env`. Change via `hermes model` (interactive) or edit the yaml directly, then `hermes gateway restart` to propagate to gateways.
 - npm `EBADENGINE` warnings during update (deps want Node >=24, box runs v22) are non-blocking — do not "fix" them.
