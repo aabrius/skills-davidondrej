@@ -136,4 +136,4 @@ The user will sometimes express preferences of how they want to be taught, or th
 
 ## Credit
 
-Original version created by [Matt Pocock](https://x.com/mattpocockuk).
+Original version created by [Matt Pocock](https://github.com/mattpocock/skills).
