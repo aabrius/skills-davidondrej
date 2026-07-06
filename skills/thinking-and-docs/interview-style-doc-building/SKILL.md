@@ -10,7 +10,7 @@ The user's preferred mode for creating durable strategic docs. AI does NOT propo
 ## When to use
 
 - Building a new SSOT file (life priorities, life vision, principles, frameworks, ranked lists).
-- Filling out a structured doc the user explicitly wants to author themselves.
+- Filling out a structured doc the user explicitly wants to author himself.
 - Quarterly/annual reviews where the user's words go into the file.
 
 **NOT for:** day planning (use `day-plan`), task triage (`organize-tasks`), or anything where AI proposes content first.

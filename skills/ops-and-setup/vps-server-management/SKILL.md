@@ -5,23 +5,23 @@ description: Use when the user wants to manage their VPS servers and the AI agen
 
 # VPS Server Management
 
-Source of truth: `~/library/infrastructure.md` (read it for the latest — IPs/expirations change).
+Source of truth: `~/Documents/.../infrastructure.md` (read it for the latest — IPs/expirations change).
 
 ## Servers (Hostinger VPS) — 3 total
 
 | Hostname | IP | OS | Purpose | Expires |
 |---|---|---|---|---|
-| personal.openclaw | <server-ip> | Ubuntu 24.04 (Dokploy) | OpenClaw — personal instance | <date> |
-| n8n.automations | <server-ip> | Ubuntu 24.04 (n8n) | All n8n workflow automations (primary) | <date> |
-| private.hermes | <server-ip> | Ubuntu 24.04 | Hermes Agent — Discord gateway (Vilnius, LT) | <date> |
+| <hostname-1> | <IP> | Ubuntu 24.04 (Dokploy) | OpenClaw — personal instance | <date> |
+| <hostname-2> | <IP> | Ubuntu 24.04 (n8n) | All n8n workflow automations (primary) | <date> |
+| <hostname-3> | <IP> | Ubuntu 24.04 | Hermes Agent — Discord gateway | <date> |
 
 SSH as `root@<IP>`.
 
 ## Access levels (never share higher than needed)
 
-1. **App login** — e.g. `<app-hostname>`. Build/edit workflows, no server access. Safest to share.
+1. **App login** — e.g. `<app-url>`. Build/edit workflows, no server access. Safest to share.
 2. **VPS SSH** — `root@<IP>`. Docker, files, system config. Trusted technical people only.
-3. **Hostinger hPanel** — `hpanel.hostinger.com`. Billing, reboot, OS reinstall. Exposes SSH creds + browser terminal, so it grants server access too. David only.
+3. **Hostinger hPanel** — `hpanel.hostinger.com`. Billing, reboot, OS reinstall. Exposes SSH creds + browser terminal, so it grants server access too. The user only.
 
 ## Managing a VPS via an agent
 
@@ -33,11 +33,11 @@ Claude Code cmux note: after Claude finishes, it may prefill a predicted next us
 
 ## Agents on servers
 
-- **OpenClaw** → personal.openclaw (managed via Dokploy).
-- **Hermes** → private.hermes (Discord gateway). Setup/config docs in `library/hermes/`.
-- **n8n** → n8n.automations.
+- **OpenClaw** → <hostname-1> (managed via Dokploy).
+- **Hermes** → <hostname-3> (Discord gateway). Setup/config docs in `library/hermes/`.
+- **n8n** → <hostname-2>.
 
-## Hermes ops (on private.hermes)
+## Hermes ops (on <hostname-3>)
 
 ```bash
 hermes --version            # shows version + commits behind
