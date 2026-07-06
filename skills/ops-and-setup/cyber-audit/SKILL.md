@@ -1,6 +1,6 @@
 ---
 name: cyber-audit
-description: Read-only exposure audit of the user's Mac (and ~/Documents/projects) for a CVE, breach, malicious package, or other security advisory, then write a structured report to ~/Documents/security-audits/. Use when the user shares a breach/CVE/malware/supply-chain advisory and asks if they're affected, says "scan my system for X", "are we affected by Y", "check if I'm vulnerable to Z", or requests any hack/breach/cyber/vulnerability audit on this Mac. Output matches the existing audit format in ~/Documents/security-audits/.
+description: Read-only exposure audit of the user's MacBook (and ~/Documents/code projects) for a CVE, breach, malicious package, or other security advisory, then write a structured report to ~/Documents/security-audits/. Use when the user shares a breach/CVE/malware/supply-chain advisory and asks if they're affected, says "scan my system for X", "are we affected by Y", "check if I'm vulnerable to Z", or requests any hack/breach/cyber/vulnerability audit on this MacBook. Output matches the existing audit format in ~/Documents/security-audits/.
 disable-model-invocation: true
 ---
 
@@ -69,7 +69,7 @@ File: `~/Documents/security-audits/YYYY-MM-DD-<short-kebab-slug>.md`
 # <Subject> — Audit
 
 **Date:** YYYY-MM-DD
-**Host:** <hostname / machine description>
+**Host:** <device model, OS version>
 
 ## <CVEs | Advisory> in scope
 
@@ -98,7 +98,7 @@ None — diagnostic only, no files modified, no <packages installed/removed | se
 - <Actionable item, or "None" if truly nothing>
 ```
 
-Match the tone of existing reports in `~/Documents/security-audits/` — terse, factual, bulleted, no hedging.
+Match the tone of the two existing reports in `~/Documents/security-audits/` — terse, factual, bulleted, no hedging.
 
 ## Verdict wording
 
@@ -112,6 +112,6 @@ Never on your own. If the verdict is "Affected", list the remediation command in
 
 ## Reference
 
-Existing reports in `~/Documents/security-audits/` show the expected style:
+Two existing reports in `~/Documents/security-audits/` show the expected style:
 - `baseline-audit.md` (long-form baseline audit — different format, do not mimic)
-- `YYYY-MM-DD-<short-kebab-slug>.md` files (this is the format to match)
+- `YYYY-MM-DD-<short-kebab-slug>.md` and any newer `YYYY-MM-DD-*.md` files (this is the format to match)

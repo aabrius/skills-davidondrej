@@ -29,7 +29,7 @@ The user's preferred mode for creating durable strategic docs. AI does NOT propo
 - **One question at a time.** Never dump multiple questions in a single message. The user has flagged this.
 - **Patch, don't overwrite.** After the initial skeleton, use `patch` for every update. Never `write_file` to an existing doc.
 - **Update the file BEFORE asking the next question.** Order: receive answer → patch file → ask next question. Not the reverse.
-- **Lists from the user are UNORDERED SETS.** When the user lists items in response to "which X should we cover?" or "what are the Ys?", that is a SET, not a ranking. Never infer rank, priority, or sequence from the order they typed them. If you need ordering, ask explicitly: "Which of these is #1?"
+- **Lists from the user are UNORDERED SETS.** When the user lists items in response to "which X should we cover?" or "what are the Ys?", that is a SET, not a ranking. Never infer rank, priority, or sequence from the order he typed them. If you need ordering, ask explicitly: "Which of these is #1?"
 - **Ask dynamics, not names.** When the user references a person, don't ask "who is X?" — ask about the role/dynamic.
 - **No snark, no attitude, no filler.** Concise questions, concise acknowledgments.
 - **No speculative additions.** Don't invent sections, edge cases, or "anything else?" prompts unless the user asks.
