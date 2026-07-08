@@ -5,7 +5,7 @@ description: 'Research any online purchase with DeepAPI — fair-price checks, b
 
 # Online Shopping Research
 
-Help the user shop online faster and cheaper: what is a fair price, where to buy, and whether the shop can be trusted.
+The whole purpose of this skill: save the user time and money when shopping online. Answer three things: what is a fair price, where to buy, and whether the shop can be trusted.
 
 For best results run this skill with the Fable 5 model — it is very smart and already knows a lot about products, pricing, and shops.
 
@@ -57,3 +57,5 @@ Every response: plain English, short sentences, very concise, clean readable mar
 - List the best 2-3 places to buy, with links and local-currency prices.
 - Only quote prices you actually found. Say it plainly when results are thin.
 - End with one line: total research cost (sum of `debitMicrousd` / 1,000,000).
+
+Success looks like this: the user found the right product quickly and bought it from a trusted, reputable shop at a good deal — not from an overpriced reseller or dropshipping store.
