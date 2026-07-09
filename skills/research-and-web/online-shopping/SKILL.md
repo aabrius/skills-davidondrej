@@ -49,7 +49,7 @@ Use your judgment. The goal is a confident answer, not a fixed procedure.
 Scale research effort to the item's price. A cheap item researched for minutes is this skill failing its purpose:
 
 - **Obvious call** — the screenshot or conversation already gives you enough to judge: answer right away. Zero searches, zero scrapes.
-- **Cheap (roughly under $50)**: 2-3 quick web searches. No deep research, minimal or no scraping.
+- **Cheap (roughly under $50)**: answer from your own knowledge — you already know what everyday items cost. At most ONE quick web search, and only if genuinely unsure. Scraping and deep research are forbidden in this tier.
 - **Mid-range**: a few searches, scrape the listing and a top competitor or two.
 - **Expensive ($1,000+)**: full depth — deep research, many search variants, scrape several shops and buyer reviews.
 
