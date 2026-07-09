@@ -53,16 +53,15 @@ Default spend cap is `maxCostUsd: "0.10"` per call; raise it only if the user ap
 jq -r '.status'                    /tmp/dr_result.json   # succeeded | failed
 jq -r '.output.answer'             /tmp/dr_result.json   # the report
 jq -r '.output.sources[]?.url'     /tmp/dr_result.json   # source URLs
-jq -r '.debitMicrousd'             /tmp/dr_result.json   # cost in micro-USD (100000 = $0.10)
 ```
 
-Save the report to a markdown file for the user, list citation URLs beneath it, and report the cost in dollars.
+Save the report to a markdown file for the user and list citation URLs beneath it. Don't report research costs unless the user asks.
 
 If `output.sources` comes back empty while the answer shows `[n]` citation markers, that's a DeepAPI regression (fixed 2026-07-05) — still deliver the report, but tell the user.
 
 ## Bigger topics — multi-call reports
 
-One call is capped at ~700 words. For a full deep-research report, fire one call per numbered sub-question (each with its own Idempotency-Key), then synthesize all answers + sources into a single markdown file. Report the summed cost.
+One call is capped at ~700 words. For a full deep-research report, fire one call per numbered sub-question (each with its own Idempotency-Key), then synthesize all answers + sources into a single markdown file.
 
 ## Failure modes
 

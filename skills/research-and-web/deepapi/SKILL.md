@@ -1,7 +1,7 @@
 ---
 name: deepapi
 description: Use DeepAPI for scraping and safe email with DEEPAPI_API_BASE_URL and DEEPAPI_API_KEY.
-version: b17ad5148ab7
+version: f00d5f98cb40
 ---
 
 # DeepAPI
@@ -40,7 +40,7 @@ Use this skill when the user asks you to scrape public web data or draft/read/se
 4. If the response has `status: running`, wait `next.afterSecs` and call `next.method` + `next.path` until `status` is `succeeded` or `failed`.
 5. If `error.retryable` is true, wait `error.retryAfterSecs` before retrying.
 6. If the response is HTTP 402 with `error.code: insufficient_credits`, stop and ask the user to top up credits at https://deepapi.co/credits. After top-up, retry with the same `Idempotency-Key`.
-7. Report `requestId`, `status`, `debitMicrousd`, `costFinal`, and the useful part of `output`.
+7. Report `requestId`, `status`, and the useful part of `output`. Don't report costs unless the user asks.
 
 ## Endpoints
 
@@ -85,7 +85,7 @@ Safety:
 - Send a unique Idempotency-Key for every POST.
 - Set an explicit customer spend cap with maxCostUsd or maxCostMicrousd before starting a scrape.
 - Start with small result caps such as maxItems or capability-specific limits.
-- Poll next.path while status is running and report the final debitMicrousd.
+- Poll next.path while status is running.
 
 Example body:
 ```json
@@ -111,7 +111,7 @@ Safety:
 - Send a unique Idempotency-Key for every POST.
 - Set an explicit customer spend cap with maxCostUsd or maxCostMicrousd before starting a scrape.
 - Start with small result caps such as maxItems or capability-specific limits.
-- Poll next.path while status is running and report the final debitMicrousd.
+- Poll next.path while status is running.
 
 Example body:
 ```json
@@ -136,7 +136,7 @@ Safety:
 - Send a unique Idempotency-Key for every POST.
 - Set an explicit customer spend cap with maxCostUsd or maxCostMicrousd before starting a scrape.
 - Start with small result caps such as maxItems or capability-specific limits.
-- Poll next.path while status is running and report the final debitMicrousd.
+- Poll next.path while status is running.
 
 Example body:
 ```json
@@ -161,7 +161,7 @@ Safety:
 - Send a unique Idempotency-Key for every POST.
 - Set an explicit customer spend cap with maxCostUsd or maxCostMicrousd before starting a scrape.
 - Start with small result caps such as maxItems or capability-specific limits.
-- Poll next.path while status is running and report the final debitMicrousd.
+- Poll next.path while status is running.
 
 Example body:
 ```json
@@ -188,7 +188,7 @@ Safety:
 - Send a unique Idempotency-Key for every POST.
 - Set an explicit customer spend cap with maxCostUsd or maxCostMicrousd before starting a scrape.
 - Start with small result caps such as maxItems or capability-specific limits.
-- Poll next.path while status is running and report the final debitMicrousd.
+- Poll next.path while status is running.
 
 Example body:
 ```json
@@ -213,7 +213,7 @@ Safety:
 - Send a unique Idempotency-Key for every POST.
 - Set an explicit customer spend cap with maxCostUsd or maxCostMicrousd before starting a scrape.
 - Start with small result caps such as maxItems or capability-specific limits.
-- Poll next.path while status is running and report the final debitMicrousd.
+- Poll next.path while status is running.
 
 Example body:
 ```json
@@ -238,7 +238,7 @@ Safety:
 - Send a unique Idempotency-Key for every POST.
 - Set an explicit customer spend cap with maxCostUsd or maxCostMicrousd before starting a scrape.
 - Start with small result caps such as maxItems or capability-specific limits.
-- Poll next.path while status is running and report the final debitMicrousd.
+- Poll next.path while status is running.
 
 Example body:
 ```json
@@ -267,7 +267,7 @@ Safety:
 - Send a unique Idempotency-Key for every POST.
 - Set an explicit customer spend cap with maxCostUsd or maxCostMicrousd before starting a scrape.
 - Start with small result caps such as maxItems or capability-specific limits.
-- Poll next.path while status is running and report the final debitMicrousd.
+- Poll next.path while status is running.
 
 Example body:
 ```json
@@ -293,7 +293,7 @@ Safety:
 - Send a unique Idempotency-Key for every POST.
 - Set an explicit customer spend cap with maxCostUsd or maxCostMicrousd before starting a scrape.
 - Start with small result caps such as maxItems or capability-specific limits.
-- Poll next.path while status is running and report the final debitMicrousd.
+- Poll next.path while status is running.
 
 Example body:
 ```json
@@ -318,7 +318,7 @@ Safety:
 - Send a unique Idempotency-Key for every POST.
 - Set an explicit customer spend cap with maxCostUsd or maxCostMicrousd before starting a scrape.
 - Start with small result caps such as maxItems or capability-specific limits.
-- Poll next.path while status is running and report the final debitMicrousd.
+- Poll next.path while status is running.
 
 Example body:
 ```json
@@ -342,7 +342,7 @@ Safety:
 - Send a unique Idempotency-Key for every POST.
 - Set an explicit customer spend cap with maxCostUsd or maxCostMicrousd before starting a scrape.
 - Start with small result caps such as maxItems or capability-specific limits.
-- Poll next.path while status is running and report the final debitMicrousd.
+- Poll next.path while status is running.
 
 Example body:
 ```json
@@ -365,7 +365,7 @@ Safety:
 - Send a unique Idempotency-Key for every POST.
 - Set an explicit customer spend cap with maxCostUsd or maxCostMicrousd before starting a scrape.
 - Start with small result caps such as maxItems or capability-specific limits.
-- Poll next.path while status is running and report the final debitMicrousd.
+- Poll next.path while status is running.
 
 Example body:
 ```json
@@ -391,7 +391,7 @@ Safety:
 - Send a unique Idempotency-Key for every POST.
 - Set an explicit customer spend cap with maxCostUsd or maxCostMicrousd before starting a scrape.
 - Start with small result caps such as maxItems or capability-specific limits.
-- Poll next.path while status is running and report the final debitMicrousd.
+- Poll next.path while status is running.
 
 Example body:
 ```json
@@ -416,7 +416,7 @@ Safety:
 - Send a unique Idempotency-Key for every POST.
 - Set an explicit customer spend cap with maxCostUsd or maxCostMicrousd before starting a scrape.
 - Start with small result caps such as maxItems or capability-specific limits.
-- Poll next.path while status is running and report the final debitMicrousd.
+- Poll next.path while status is running.
 
 Example body:
 ```json
@@ -441,7 +441,7 @@ Safety:
 - Send a unique Idempotency-Key for every POST.
 - Set an explicit customer spend cap with maxCostUsd or maxCostMicrousd before starting a scrape.
 - Start with small result caps such as maxItems or capability-specific limits.
-- Poll next.path while status is running and report the final debitMicrousd.
+- Poll next.path while status is running.
 
 Example body:
 ```json
@@ -466,7 +466,7 @@ Safety:
 - Send a unique Idempotency-Key for every POST.
 - Set an explicit customer spend cap with maxCostUsd or maxCostMicrousd before starting a scrape.
 - Start with small result caps such as maxItems or capability-specific limits.
-- Poll next.path while status is running and report the final debitMicrousd.
+- Poll next.path while status is running.
 
 Example body:
 ```json
@@ -558,7 +558,7 @@ Safety:
 - Send a unique Idempotency-Key for every POST.
 - Use query for the research question and context only for relevant background.
 - Set maxCostUsd when you need a lower or higher spend cap than the default.
-- Report debitMicrousd and summarize the returned sources when sources are present.
+- Summarize the returned sources when sources are present.
 
 Example body:
 ```json

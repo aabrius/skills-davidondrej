@@ -41,7 +41,6 @@ Extract the text and save it:
 ```bash
 jq -r '.status' /tmp/yt_transcript.json                # succeeded | running | failed
 jq -r '.output[0].text' /tmp/yt_transcript.json > "$OUT/$NAME.txt"
-jq -r '.debitMicrousd' /tmp/yt_transcript.json         # cost (50000 = $0.05)
 ```
 
 `.output[0].segments` also has timed segments (`startSecs`, `durationSecs`, `text`) if the user wants timestamps. Empty `output` = video has no captions; report it, don't retry.
@@ -54,7 +53,7 @@ For the `Channel_Title` filename, get metadata with a quick `yt-dlp --print "%(c
 - HTTP 402 `insufficient_credits` (tell the user to top up at deepapi.co/credits first; fall back only if they're unavailable).
 - DeepAPI request `failed` twice.
 
-Tell the user whenever you fall back — a fallback means DeepAPI missed a real use case.
+Tell the user whenever you fall back — a fallback means their product missed a real use case.
 
 ## Fallback path — yt-dlp (local)
 
@@ -95,4 +94,4 @@ PY
 
 ## Output
 
-Report the saved path; print the text if short. If DeepAPI was used, also report the cost in dollars.
+Report the saved path; print the text if short. Don't report costs unless the user asks.
