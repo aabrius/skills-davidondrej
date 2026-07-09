@@ -35,15 +35,16 @@ OUT=$(mktemp /tmp/codex-out.XXXXXX)
 codex exec \
   --cd /path/to/repo \
   --model gpt-5.6-sol \
-  --config model_reasoning_effort=xhigh \
+  --config model_reasoning_effort=high \
   --sandbox workspace-write \
   --output-last-message "$OUT" \
   "Full task prompt: goal, constraints, files to touch, definition of done." \
   </dev/null
 ```
 
-- Always use GPT 5.6 Sol (`gpt-5.6-sol`). Default reasoning effort to `xhigh`.
+- Always use GPT 5.6 Sol (`gpt-5.6-sol`). Default reasoning effort to `high`.
   Pass both flags explicitly on every new Codex run.
+- Do NOT use Codex fast mode.
 - `</dev/null` is MANDATORY when stdin is not a real terminal (background shells,
   scripts): codex treats open stdin as extra context and waits forever for EOF.
 - Codex sees NOTHING of your conversation. Put all context in the prompt:
@@ -76,7 +77,7 @@ results merge cleanly. One git worktree per Codex run — never two in the same 
 ```bash
 git worktree add /tmp/wt-taskA -b codex/task-a
 codex exec --cd /tmp/wt-taskA --model gpt-5.6-sol \
-  --config model_reasoning_effort=xhigh --sandbox workspace-write \
+  --config model_reasoning_effort=high --sandbox workspace-write \
   -o /tmp/outA.md "task A" </dev/null
 ```
 
