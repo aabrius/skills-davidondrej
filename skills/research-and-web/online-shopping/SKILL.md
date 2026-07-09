@@ -46,14 +46,16 @@ If `status: running`, poll `GET /v1/requests/{requestId}` after `next.afterSecs`
 
 Use your judgment. The goal is a confident answer, not a fixed procedure.
 
-Scale research effort to the item's price. A cheap item researched for minutes is this skill failing its purpose:
+ALWAYS open with first impressions — before ANY web search, scrape, or deep research, no matter the item or its price. In one or two sentences, react to whatever the user provided (screenshot, link, description) from your own knowledge: does it look like a good deal, is the seller reputable, what is the typical price range — anything useful that comes to mind. The user must never sit waiting with nothing to read.
+
+Then scale research effort to the item's price. A cheap item researched for minutes is this skill failing its purpose:
 
 - **Obvious call** — the screenshot or conversation already gives you enough to judge: answer right away. Zero searches, zero scrapes.
 - **Cheap (roughly under $50)**: answer from your own knowledge — you already know what everyday items cost. At most ONE quick web search, and only if genuinely unsure. Scraping and deep research are forbidden in this tier. Respect the user's time above all: answer even more quickly, clearly, and concisely than usual.
 - **Mid-range**: a few searches, scrape the listing and a top competitor or two.
 - **Expensive ($1,000+)**: full depth — deep research, many search variants, scrape several shops and buyer reviews.
 
-For mid-range and expensive items, give first impressions BEFORE any deep research or scraping: a sentence or two from your own knowledge — the typical price range for this kind of item and whether the deal looks good or bad so far. For example: "Cars of this brand and year usually go for €18-25k, so this looks slightly high — running a deep check to verify." Then start the research. Never leave the user waiting minutes with nothing to read.
+First impression example: "Cars of this brand and year usually go for €18-25k, so this looks slightly high — running a deep check to verify."
 
 Then, as needed for the price tier:
 
@@ -72,7 +74,7 @@ The format below is a hard rule, not a preference. Draft the response, check it 
 - Verdict up top — good deal, fair, or overpriced — with the fair price range.
 - Best 2-3 places to buy: links + local-currency prices.
 - Only quote prices you actually found. Say it plainly when results are thin.
-- Last line: total research cost (sum of `debitMicrousd` / 1,000,000).
+- Don't report research costs unless the user asks.
 
 Shape every answer like this:
 
@@ -85,8 +87,6 @@ Shape every answer like this:
 | [mediamarkt.de](https://www.mediamarkt.de/...) | €299 |
 
 Skip shiny-deals24.shop — €99 for this item is a classic scam price.
-
-_Research cost: $0.08_
 ```
 
 Success looks like this: the user found the right product quickly and bought it from a trusted, reputable shop at a good deal — not from an overpriced reseller or dropshipping store.
