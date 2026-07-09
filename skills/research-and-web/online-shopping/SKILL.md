@@ -11,6 +11,8 @@ For best results run this skill with the Fable 5 model — it is very smart and 
 
 Research only. Never place orders, enter payment or address details, or create shop accounts.
 
+Non-negotiable: every response to the user is very concise, clear, and formatted in nice readable markdown. The How to answer section is a hard contract — check every response against it before sending.
+
 ## Setup
 
 - Read `DEEPAPI_API_KEY` and `DEEPAPI_API_BASE_URL` from the environment. If unset, try `source ~/.deepapi/env`; the default base URL is `https://deepapi.co`.
@@ -44,6 +46,15 @@ If `status: running`, poll `GET /v1/requests/{requestId}` after `next.afterSecs`
 
 Use your judgment. The goal is a confident answer, not a fixed procedure.
 
+Scale research effort to the item's price. A cheap item researched for minutes is this skill failing its purpose:
+
+- **Obvious call** — the screenshot or conversation already gives you enough to judge: answer right away. Zero searches, zero scrapes.
+- **Cheap (roughly under $50)**: 2-3 quick web searches. No deep research, minimal or no scraping.
+- **Mid-range**: a few searches, scrape the listing and a top competitor or two.
+- **Expensive ($1,000+)**: full depth — deep research, many search variants, scrape several shops and buyer reviews.
+
+Then, as needed for the price tier:
+
 - Identify the exact item from the conversation or the attached photo/screenshot.
 - Infer the delivery country from the conversation or screenshot. If unclear, ask where it should be delivered. Search shops in that country or nearby ones with sensible shipping — whatever makes sense for that user.
 - For branded merch, check for an official store first; if none exists, suggest reputable print-on-demand shops and say the item is unofficial.
@@ -51,11 +62,29 @@ Use your judgment. The goal is a confident answer, not a fixed procedure.
 
 ## How to answer
 
-Every response: plain English, short sentences, very concise, clean readable markdown.
+The format below is a hard rule, not a preference. Draft the response, check it against this list, and rewrite it if it fails any point:
 
-- Lead with the verdict — good deal, fair, or overpriced — and the fair price range.
-- List the best 2-3 places to buy, with links and local-currency prices.
+- Very concise: the whole answer fits on one screen. Short sentences. Plain English.
+- No filler, no hedging, no research narration ("I searched for...", "Let me check..."). Conclusions only.
+- Nice readable markdown: a bold verdict line first, then short bullets or a small table. Never a wall of text, never long paragraphs.
+- Verdict up top — good deal, fair, or overpriced — with the fair price range.
+- Best 2-3 places to buy: links + local-currency prices.
 - Only quote prices you actually found. Say it plainly when results are thin.
-- End with one line: total research cost (sum of `debitMicrousd` / 1,000,000).
+- Last line: total research cost (sum of `debitMicrousd` / 1,000,000).
+
+Shape every answer like this:
+
+```markdown
+**Verdict: Overpriced — fair price is €280–€330, this listing asks €449.**
+
+| Buy from | Price |
+|---|---|
+| [amazon.de](https://www.amazon.de/...) | €289 |
+| [mediamarkt.de](https://www.mediamarkt.de/...) | €299 |
+
+Skip shiny-deals24.shop — €99 for this item is a classic scam price.
+
+_Research cost: $0.08_
+```
 
 Success looks like this: the user found the right product quickly and bought it from a trusted, reputable shop at a good deal — not from an overpriced reseller or dropshipping store.
