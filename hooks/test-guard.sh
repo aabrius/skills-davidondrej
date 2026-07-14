@@ -84,6 +84,11 @@ check block 'gh api repos/davidondrej/DeepAPI --method DELETE'
 check block 'gh api --method=delete /repos/x/y'
 check block 'gh repo edit davidondrej/DeepAPI --visibility public'
 check block 'gh auth token'
+check block 'git reflog expire --expire=now --all'
+check block 'git reflog expire --expire-unreachable=now --all'
+check block 'git gc --prune=now'
+check block 'git gc --aggressive --prune=now'
+check block 'cd /tmp && git gc --prune=all'
 
 # ---- must be ALLOWED ----
 check allow 'rm -rf node_modules'
@@ -120,6 +125,11 @@ check allow 'gh secret set DEEPAPI_KEY --body abc'
 check allow 'gh auth status'
 check allow 'gh repo edit davidondrej/DeepAPI --description "new desc"'
 check allow 'gh issue close 12'
+check allow 'git reflog'
+check allow 'git reflog expire --expire=90.days.ago'
+check allow 'git gc'
+check allow 'git gc --aggressive'
+check allow 'git gc --prune=2.weeks.ago'
 
 echo ""
 echo "passed: $pass, failed: $fail"

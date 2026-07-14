@@ -39,7 +39,11 @@
 (^|[;&|[:space:]])chmod[[:space:]][^;&|]*777[[:space:]]+["']?/["']?[[:space:]]*($|[;&|])
 (^|[;&|[:space:]])chown[[:space:]]+-R[^;&|]*[[:space:]]+/["']?[[:space:]]*($|[;&|])
 
-# 8. GitHub CLI (gh): irreversible or account-level destruction + token exfil
+# 8. destroying the reflog safety net (makes local history rewrites unrecoverable)
+(^|[;&|[:space:]])git[[:space:]]+reflog[[:space:]]+expire[^;&|]*--expire(-unreachable)?(=|[[:space:]]+)now
+(^|[;&|[:space:]])git[[:space:]]+gc[^;&|]*--prune(=|[[:space:]]+)(now|all)
+
+# 9. GitHub CLI (gh): irreversible or account-level destruction + token exfil
 (^|[;&|[:space:]])gh[[:space:]]+repo[[:space:]]+delete([[:space:]]|$)
 (^|[;&|[:space:]])gh[[:space:]]+release[[:space:]]+delete([[:space:]]|$)
 (^|[;&|[:space:]])gh[[:space:]]+(secret|ssh-key|gpg-key)[[:space:]]+delete([[:space:]]|$)
